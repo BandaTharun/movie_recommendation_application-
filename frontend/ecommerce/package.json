@@ -1,6 +1,6 @@
 {
   "name": "ecommerce",
-  "proxy": "http://127.0.0.1:5015/",
+  "proxy": "http://backend:5015/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

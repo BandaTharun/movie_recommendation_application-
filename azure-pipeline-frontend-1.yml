@@ -32,7 +32,7 @@ stages:
         containerRegistry: 'dockerregestryconnection'
         repository: 'tharun9705/movie_recommendation_applications_repository/$(frontendImageName)'
         command: 'build'
-        Dockerfile: '$(Build.SourcesDirectory)/frontend/ecomproject/dockerfile'
+        Dockerfile: '$(Build.SourcesDirectory)/frontend/ecomproject/Dockerfile'
         tags: '$(tag)'
     
     - task: Docker@2

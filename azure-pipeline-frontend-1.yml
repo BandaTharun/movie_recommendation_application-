@@ -8,7 +8,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  frontendImageName: 'frontend'
+  frontendImageName: 'frontend_image'
 
 pool:
   name: 'agentpool-to-build-container'
@@ -31,9 +31,9 @@ stages:
       inputs:
         containerRegistry: 'dockerregestryconnection'
         repository: 'tharun9705/movie_recommendation_applications_repository'
-        command: build
+        command: 'build'
         Dockerfile: '$(Build.SourcesDirectory)/frontend/ecommerce/Dockerfile'
-        tags: '$(backendImageName)$(tag)'
+        tags: '$(frontendImageName)$(tag)'
 
 - stage: Push
   displayName: Push
@@ -46,8 +46,8 @@ stages:
       inputs:
         containerRegistry: 'dockerregestryconnection'
         repository: 'tharun9705/movie_recommendation_applications_repository'
-        command: push
-        tags: '$(backendImageName)$(tag)'
+        command: 'push'
+        tags: '$(frontendImageName)$(tag)'
 
 - stage: UpdateK8sFile
   displayName: Update k8s file

@@ -39,7 +39,7 @@ stages:
       displayName: Push Docker image
       inputs:
         containerRegistry: 'dockerregestryconnection'
-        repository: 'tharun9705/movie_recommendation_applications_repository/$(frontendImageName)'
+        repository: 'tharun9705/movie_recommendation_applications_repository'
         command: 'push'
         tags: '$(tag)'
 

@@ -30,7 +30,7 @@ stages:
       displayName: Build frontend  Docker image 
       inputs:
         containerRegistry: 'dockerregestryconnection'
-        repository: 'tharun9705/movie_recommendation_applications_repository/$(frontendImageName)'
+        repository: 'tharun9705/movie_recommendation_applications_repository'
         command: 'build'
         Dockerfile: '$(Build.SourcesDirectory)/frontend/ecommerce/Dockerfile'
         tags: '$(tag)'
@@ -39,6 +39,6 @@ stages:
       displayName: Push Docker image
       inputs:
         containerRegistry: 'dockerregestryconnection'
-        repository: 'tharun9705/movie_recommendation_applications_repository/$(frontendImageName)'
+        repository: 'tharun9705/movie_recommendation_applications_repository'
         command: 'push'
         tags: '$(tag)'

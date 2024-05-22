@@ -1,38 +1,32 @@
+
+
 #!/bin/bash
 
 set -x
 
-# Input variable
-TAG=$1
-IMAGE_NAME="tharun9705/movie_recommendation_applications_repository"
-NEW_IMAGE="$IMAGE_NAME:$TAG"
+# Set the repository URL
+REPO_URL="https://github.com/BandaTharun/movie_recommendation_application-.git"
 
-# Assuming "mrdir file" and "cd file" are placeholders for specific commands, I've commented them out
-# Uncomment and replace with actual commands if needed
- mrdir file
- cd file
-
-# Clone the repository
-git clone https://github.com/BandaTharun/movie_recommendation_application-.git /tmp/temp_repo
+# Clone the git repository into the /tmp directory
+git clone "$REPO_URL" /tmp/temp_repo
 
 # Navigate into the cloned repository directory
 cd /tmp/temp_repo
 
 # Make changes to the Kubernetes manifest file(s)
-# Update the image tag in the frontend_k8s.yaml file
-sed -i "s|\(image: tharun9705/movie_recommendation_applications_repository:\).*|\1$TAG|" k8sfiles/frontend_k8s.yaml
+# For example, let's say you want to change the image tag in a deployment.yaml file
+sed -i "s|image:.*|image: tharun9705/movie_recommendation_applications_repository:$1|g" k8sfiles/frontend_k8s.yaml
 
 # Add the modified files
-git add k8sfiles/frontend_k8s.yaml
+git add .
 
 # Commit the changes
-git commit -m "Update frontend image to $NEW_IMAGE"
+git commit -m "Update Kubernetes manifest"
 
 # Push the changes back to the repository
 git push
 
 # Cleanup: remove the temporary directory
-cd /tmp
 rm -rf /tmp/temp_repo
 
 

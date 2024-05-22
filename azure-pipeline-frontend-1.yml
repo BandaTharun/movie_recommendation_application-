@@ -59,4 +59,4 @@ stages:
       displayName: Update Kubernetes Configuration
       inputs:
         scriptPath: 'code_files_to_update_k8s/update_frontend_id.sh'
-        args: '$(backendImageName)$(tag)'
+        args: '$(frontendImageName)$(tag)'

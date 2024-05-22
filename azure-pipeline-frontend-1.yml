@@ -8,7 +8,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  frontendImageName: 'frontend_image'
+  frontendImageName: 'frontend'
 
 pool:
   name: 'agentpool-to-build-container'

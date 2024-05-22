@@ -1,0 +1,45 @@
+trigger:
+  paths:
+    include:
+      - frontend/ecomproject/*
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+  frontendImageName: 'frontend_image'
+
+pool:
+  name: 'agentpool-to-build-container'
+
+stages:
+- stage: Build_and_Push_frontend_
+  displayName: Build_and_Push_frontend_
+  jobs:
+  - job: Build_and_push
+    displayName: Build_and_push_frontend_
+    steps:
+    - task: Docker@2
+      displayName: Login to Docker Hub
+      inputs:
+        command: login
+        containerRegistry: 'dockerregestryconnection'
+    
+    - task: Docker@2
+      displayName: Build frontend  Docker image 
+      inputs:
+        containerRegistry: 'dockerregestryconnection'
+        repository: 'tharun9705/movie_recommendation_applications_repository/$(frontendImageName)'
+        command: 'build'
+        Dockerfile: '$(Build.SourcesDirectory)/frontend/ecomproject/dockerfile'
+        tags: '$(tag)'
+    
+    - task: Docker@2
+      displayName: Push Docker image
+      inputs:
+        containerRegistry: 'dockerregestryconnection'
+        repository: 'tharun9705/movie_recommendation_applications_repository/$(frontendImageName)'
+        command: 'push'
+        tags: '$(tag)'
+

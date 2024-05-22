@@ -4,15 +4,18 @@ set -x
 
 
 
-# Clone the git repository into the /tmp directoryà
+
+# Input variable
+TAG=$1
+IMAGE_NAME="tharun9705/movie_recommendation_applications_repository"
+NEW_IMAGE="$IMAGE_NAME:$TAG"
+
+# Clone the repository
 git clone https://github.com/BandaTharun/movie_recommendation_application-.git
+cd movie_recommendation_application-/k8sfiles
 
-# Navigate into the cloned repository directory
-cd k8sfiles
-
-# Make changes to the Kubernetes manifest file(s)
-# For example, let's say you want to change the image tag in a deployment.yaml file
-sed -i "s|image:.*|image: <ACR-REGISTRY-NAME>/$2:$3|g" k8s-specifications/$1-deployment.yaml
+# Update the Kubernetes manifest file with the new Docker image ID
+sed -i "s|\(image: tharun9705/movie_recommendation_applications_repository:\).*|\1$NEW_IMAGE|" backend_k8's.yaml
 
 # Add the modified files
 git add .
@@ -24,4 +27,4 @@ git commit -m "Update Kubernetes manifest"
 git push
 
 # Cleanup: remove the temporary directory
-rm -rf /tmp/temp_repo
+rm -rf movie_recommendation_application-

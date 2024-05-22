@@ -1,0 +1,67 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+  paths:
+    include:
+      - backend/ecomproject/*
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+  backendImageName: 'backend_image'
+
+pool:
+  name: 'agentpool-to-build-container'
+
+stages:
+- stage: Build
+  displayName: Build
+  jobs:
+  - job: BuildBackend
+    displayName: Build backend Docker image
+    steps:
+    - task: Docker@2
+      displayName: Login to Docker Hub
+      inputs:
+        command: login
+        containerRegistry: 'dockerregestryconnection'
+    
+    - task: Docker@2
+      displayName: Build backend Docker image
+      inputs:
+        containerRegistry: 'dockerregestryconnection'
+        repository: 'tharun9705/movie_recommendation_applications_repository'
+        command: 'build'
+        Dockerfile: '$(Build.SourcesDirectory)/backend/ecomproject/dockerfile'
+        tags: '$(backendImageName)$(tag)'
+
+- stage: Push
+  displayName: Push
+  jobs:
+  - job: PushBackend
+    displayName: Push backend Docker image
+    steps:
+    - task: Docker@2
+      displayName: Push Docker image
+      inputs:
+        containerRegistry: 'dockerregestryconnection'
+        repository: 'tharun9705/movie_recommendation_applications_repository'
+        command: 'push'
+        tags: '$(backendImageName)$(tag)'
+
+- stage: UpdateK8sFile
+  displayName: Update k8s file
+  jobs:
+  - job: UpdateK8s
+    displayName: Update k8s file with new Docker ID
+    steps:
+    - task: ShellScript@2
+      displayName: Update Kubernetes Configuration
+      inputs:
+        scriptPath: 'code_files_to_update_k8s/update_backend_id.sh'
+        args: '$(backendImageName)$(tag)'
+

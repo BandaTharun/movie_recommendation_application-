@@ -2,11 +2,13 @@
 
 set -x
 
+
 # Input variables
 REPO_URL="https://github.com/BandaTharun/movie_recommendation_application-.git"
 ACR_REGISTRY_NAME="tharun9705/movie_recommendation_applications_repository"
 TAG=$1
-DEPLOYMENT_FILE_PATH="k8sfiles/backend_k8's.yaml" 
+
+DEPLOYMENT_FILE_PATH="k8sfiles/backend_k8's.yaml"
 
 # Clone the git repository into the /tmp directory
 git clone "$REPO_URL" /tmp/temp_repo

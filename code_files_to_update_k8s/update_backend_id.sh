@@ -7,8 +7,8 @@ set -x
 
 # Input variable
 TAG=$1
-IMAGE_NAME="tharun9705/movie_recommendation_applications_repository"
-NEW_IMAGE="$IMAGE_NAME:$TAG"
+
+NEW_IMAGE=$TAG
 
 # Clone the repository
 git clone https://github.com/BandaTharun/movie_recommendation_application-.git

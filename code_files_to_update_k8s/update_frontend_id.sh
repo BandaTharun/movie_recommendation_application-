@@ -15,10 +15,10 @@ cd /tmp/temp_repo
 
 # Make changes to the Kubernetes manifest file(s)
 # Update the image tag in the frontend_k8s.yaml file
-sed -i "s|\(image: tharun9705/movie_recommendation_applications_repository:\).*|\1$TAG|" k8sfiles/frontend_k8's.yaml
+sed -i "s|\(image: tharun9705/movie_recommendation_applications_repository:\).*|\1$TAG|" k8sfiles/frontend_k8s.yaml
 
 # Add the modified files
-git add frontend_k8s.yaml
+git add k8sfiles/frontend_k8s.yaml
 
 # Commit the changes
 git commit -m "Update frontend image to $NEW_IMAGE"
@@ -27,8 +27,8 @@ git commit -m "Update frontend image to $NEW_IMAGE"
 git push
 
 # Cleanup: remove the temporary directory
-cd ../../
-rm -rf movie_recommendation_application-
+cd /tmp
+rm -rf /tmp/temp_repo
 
 
 

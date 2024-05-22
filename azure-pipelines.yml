@@ -10,7 +10,7 @@ variables:
   tag: '$(Build.BuildId)'
 
 pool:
-  name: 'agent_pool_to_build_container'
+  name: 'agentpool-to-build-container'
 
 stages:
 - stage: Build_and_Push

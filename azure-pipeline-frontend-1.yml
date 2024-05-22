@@ -32,7 +32,7 @@ stages:
         containerRegistry: 'dockerregestryconnection'
         repository: 'tharun9705/movie_recommendation_applications_repository'
         command: build
-        Dockerfile: '$(Build.SourcesDirectory)/frontend/ecomproject/dockerfile'
+        Dockerfile: '$(Build.SourcesDirectory)/backend/ecomproject/Dockerfile'
         tags: '$(backendImageName)$(tag)'
 
 - stage: Push

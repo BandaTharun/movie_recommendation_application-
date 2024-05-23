@@ -29,7 +29,7 @@ git add .
 git commit -m "Update Kubernetes manifest"
 
 # Push the changes back to the repository
-git push https://$YourGitHubToken@github.com/BandaTharun/movie_recommendation_application- 
+git push 
 
 
 # Cleanup: remove the temporary directory

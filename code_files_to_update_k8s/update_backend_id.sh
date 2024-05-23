@@ -20,7 +20,7 @@ cd /tmp/temp_repo
 
 # Make changes to the Kubernetes manifest file(s)
 # Update the image tag in the specified deployment.yaml file
-sed -i "s|image:.*|image: $ACR_REGISTRY_NAME:$TAG|g" "$DEPLOYMENT_FILE_PATH"
+sed -i "s|image:.*|image: $ACR_REGISTRY_NAME:$TAG|g" k8sfiles/backend_k8s.yaml
 
 # Add the modified files
 git add .

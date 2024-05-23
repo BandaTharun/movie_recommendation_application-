@@ -24,10 +24,11 @@ sed -i "s|image:.*|image: $ACR_REGISTRY_NAME:$TAG|g" "$DEPLOYMENT_FILE_PATH"
 git add .
 
 # Commit the changes
-git commit -m "Update Kubernetes manifest to use image $ACR_REGISTRY_NAME:$TAG"
+git commit -m "Update Kubernetes manifest"
 
 # Push the changes back to the repository
 git push
+
 
 # Cleanup: remove the temporary directory
 rm -rf /tmp/temp_repo

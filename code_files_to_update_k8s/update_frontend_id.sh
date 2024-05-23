@@ -6,7 +6,7 @@ set -x
 REPO_URL="https://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@github.com/BandaTharun/movie_recommendation_application-.git"
 ACR_REGISTRY_NAME="tharun9705/movie_recommendation_applications_repository"
 TAG=$1
-DEPLOYMENT_FILE_PATH="k8sfiles/frontend_k8's.yaml"
+DEPLOYMENT_FILE_PATH="k8sfiles/frontend_k8s.yaml"
 
 # Clone the git repository into the /tmp directory
 git clone "$REPO_URL" /tmp/temp_repo

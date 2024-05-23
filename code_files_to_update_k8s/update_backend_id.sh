@@ -7,6 +7,8 @@ set -x
 REPO_URL="https://github.com/BandaTharun/movie_recommendation_application-.git"
 ACR_REGISTRY_NAME="tharun9705/movie_recommendation_applications_repository"
 TAG=$1
+YourGitHubToken=$2
+
 
 DEPLOYMENT_FILE_PATH="k8sfiles/backend_k8's.yaml"
 
@@ -27,7 +29,7 @@ git add .
 git commit -m "Update Kubernetes manifest"
 
 # Push the changes back to the repository
-git push
+git push https://$YourGitHubToken@github.com/BandaTharun/movie_recommendation_application- 
 
 
 # Cleanup: remove the temporary directory

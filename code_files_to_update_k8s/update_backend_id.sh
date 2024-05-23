@@ -4,7 +4,7 @@ set -x
 
 
 # Input variables
-REPO_URL="https://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@github.com/BandaTharun/movie_recommendation_application-.git"
+REPO_URL="https://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@github.com/BandaTharun/movie_recommendation_application-.git"
 ACR_REGISTRY_NAME="tharun9705/movie_recommendation_applications_repository"
 TAG=$1
 

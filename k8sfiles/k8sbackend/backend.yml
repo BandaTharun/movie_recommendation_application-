@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: tharun9705/movie_recommendation_applications_repository:backend_image36
+        image: tharun9705/movie_recommendation_backend_server:latest
         ports:
         - containerPort: 5015
 ---

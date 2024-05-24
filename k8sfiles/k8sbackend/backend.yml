@@ -2,10 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  labels:
-    app: backend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -16,7 +14,20 @@ spec:
     spec:
       containers:
       - name: backend
-        image: tharun9705/movie_recommendation_applications_repository:backend_image36
+        image: tharun9705/movie_recommendation_applications_repository:latest
         ports:
         - containerPort: 5015
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 5015
+      targetPort: 5015
+  type: ClusterIP
 

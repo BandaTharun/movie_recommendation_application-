@@ -35,3 +35,4 @@ EXPOSE 5015
 
 # Run app.py when the container launches
 CMD ["python", "manage.py", "runserver", "0.0.0.0:5015"]
+

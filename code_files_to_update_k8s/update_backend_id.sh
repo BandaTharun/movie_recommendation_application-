@@ -13,7 +13,7 @@ YourGitHubToken=$2
 DEPLOYMENT_FILE_PATH="k8sfiles/k8sbackend/backend.yml"
 
 # Clone the git repository into the /tmp directory
-git clone "$REPO_URL" /tmp/temp_repo
+git clone $REPO_URL /tmp/temp_repo
 
 # Navigate into the cloned repository directory
 cd /tmp/temp_repo

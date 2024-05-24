@@ -10,7 +10,7 @@ TAG=$1
 YourGitHubToken=$2
 
 
-DEPLOYMENT_FILE_PATH="k8sfiles/backend_k8's.yaml"
+DEPLOYMENT_FILE_PATH="k8sfiles/k8sbackend/backend.yml"
 
 # Clone the git repository into the /tmp directory
 git clone "$REPO_URL" /tmp/temp_repo
@@ -20,7 +20,7 @@ cd /tmp/temp_repo
 
 # Make changes to the Kubernetes manifest file(s)
 # Update the image tag in the specified deployment.yaml file
-sed -i "s|image:.*|image: $ACR_REGISTRY_NAME:$TAG|g" k8sfiles/backend_k8s.yaml
+sed -i "s|image:.*|image: $ACR_REGISTRY_NAME:$TAG|g" $DEPLOYMENT_FILE_PATH
 
 # Add the modified files
 git add .

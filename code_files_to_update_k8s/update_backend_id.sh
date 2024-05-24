@@ -33,4 +33,4 @@ git push
 
 
 # Cleanup: remove the temporary directory
-rm -rf /tmp/temp_repo
+

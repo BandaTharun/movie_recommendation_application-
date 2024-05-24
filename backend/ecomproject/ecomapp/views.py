@@ -322,8 +322,8 @@ def recommend(request):
     
     if current_user_id > new_user:
         default_movie = Movies.objects.get(id=20)
-        dummy_rating = Myrating(user=request.user, movie=default_movie, rating=0)
-        dummy_rating.save()
+        #dummy_rating = Myrating(user=request.user, movie=default_movie, rating=0)
+        #dummy_rating.save()
 
     userRatings = movie_rating.pivot_table(index='user_id', columns='movie_id', values='rating').fillna(0)
     corrMatrix = userRatings.corr(method='pearson')

@@ -1,24 +1,24 @@
 trigger:
   paths:
     include:
-      - backend/ecomproject/*
+      - frontend/ecomproject/*
 
 resources:
 - repo: self
 
 variables:
   tag: '$(Build.BuildId)'
-  backendImageName: 'backend'
+  frontendImageName: 'frontend_image'
 
 pool:
   name: 'agentpool-to-build-container'
 
 stages:
-- stage: Build_and_Push
-  displayName: Build_and_Push
+- stage: Build
+  displayName: Build
   jobs:
-  - job: Build
-    displayName: backend_dockerimage_Build_push
+  - job: BuildFrontend
+    displayName: Build frontend Docker image
     steps:
     - task: Docker@2
       displayName: Login to Docker Hub
@@ -27,19 +27,36 @@ stages:
         containerRegistry: 'dockerregestryconnection'
     
     - task: Docker@2
-      displayName: Build Docker image
+      displayName: Build frontend Docker image
       inputs:
         containerRegistry: 'dockerregestryconnection'
         repository: 'tharun9705/movie_recommendation_applications_repository'
         command: 'build'
-        Dockerfile: '$(Build.SourcesDirectory)/backend/ecomproject/dockerfile'
-        tags: '$(backendImageName)$(tag)'
-    
+        Dockerfile: '$(Build.SourcesDirectory)/frontend/ecommerce/Dockerfile'
+        tags: '$(frontendImageName)$(tag)'
+
+- stage: Push
+  displayName: Push
+  jobs:
+  - job: PushFrontend
+    displayName: Push frontend Docker image
+    steps:
     - task: Docker@2
       displayName: Push Docker image
       inputs:
         containerRegistry: 'dockerregestryconnection'
         repository: 'tharun9705/movie_recommendation_applications_repository'
         command: 'push'
-        tags: '$(backendImageName)$(tag)'
+        tags: '$(frontendImageName)$(tag)'
 
+- stage: UpdateK8sFile
+  displayName: Update k8s file
+  jobs:
+  - job: UpdateK8s
+    displayName: Update k8s file with new Docker ID
+    steps:
+    - task: ShellScript@2
+      displayName: Update Kubernetes Configuration
+      inputs:
+        scriptPath: 'code_files_to_update_k8s/update_frontend_id.sh'
+        args: '$(frontendImageName)$(tag)'

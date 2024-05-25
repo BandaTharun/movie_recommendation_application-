@@ -85,8 +85,12 @@ WSGI_APPLICATION = 'ecomproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mv',
+        'USER': 'admin',
+        'PASSWORD': 'adminuser',
+        'HOST': 'database-sql.c9gugau8uqsk.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 

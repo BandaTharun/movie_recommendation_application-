@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: tharun9705/movie_recommendation_frontend_server:frontend_image48
+        image: tharun9705/movie_recommendation_frontend_server:latest
         ports:
         - containerPort: 3000
 ---

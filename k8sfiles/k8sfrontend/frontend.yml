@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: docker pull tharun9705/movie_recommendation_applications_repository:frontend_image37
+        image: tharun9705/movie_recommendation_applications_repository:frontend_image37
         ports:
         - containerPort: 3000
 ---

@@ -29,8 +29,5 @@ git commit -m "Update Kubernetes manifest to use image $ACR_REGISTRY_NAME:$TAG"
 # Push the changes
 git push https://${YourGitHubToken}@github.com/BandaTharun/movie_recommendation_application-.git
 
-# Cleanup
-rm -rf /tmp/temp_repo
-
 
 

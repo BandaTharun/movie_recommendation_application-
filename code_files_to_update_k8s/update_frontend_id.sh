@@ -9,7 +9,7 @@ ACR_REGISTRY_NAME="tharun9705/movie_recommendation_applications_repository"
 TAG=$1
 YourGitHubToken=$2
 
-DEPLOYMENT_FILE_PATH="k8sfiles/frontend_k8s.yaml"
+DEPLOYMENT_FILE_PATH="k8sfiles/k8sfrontend/frontend.yml"
 
 # Clone the repository using the PAT
 git clone https://${YourGitHubToken}@github.com/BandaTharun/movie_recommendation_application-.git /tmp/temp_repo

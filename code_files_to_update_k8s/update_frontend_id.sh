@@ -1,31 +1,33 @@
+
+
 #!/bin/bash
 
 set -x
 
 # Input variables
-REPO_URL="https://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@github.com/BandaTharun/movie_recommendation_application-.git"
 ACR_REGISTRY_NAME="tharun9705/movie_recommendation_applications_repository"
 TAG=$1
+YourGitHubToken=$2
+
 DEPLOYMENT_FILE_PATH="k8sfiles/frontend_k8s.yaml"
 
-# Clone the git repository into the /tmp directory
-git clone "$REPO_URL" /tmp/temp_repo
+# Clone the repository using the PAT
+git clone https://${YourGitHubToken}@github.com/BandaTharun/movie_recommendation_application-.git /tmp/temp_repo
 
-# Navigate into the cloned repository directory
+# Change directory to the cloned repo
 cd /tmp/temp_repo
 
-# Make changes to the Kubernetes manifest file(s)
-# Update the image tag in the specified deployment.yaml file
-sed -i "s|image:.*|image: $ACR_REGISTRY_NAME:$TAG|g" "$DEPLOYMENT_FILE_PATH"
-
-# Add the modified files
-git add .
+# Update the Kubernetes manifest
+sed -i "s|image:.*|image: $ACR_REGISTRY_NAME:$TAG|g" $DEPLOYMENT_FILE_PATH
 
 # Commit the changes
+git add $DEPLOYMENT_FILE_PATH
+
 git commit -m "Update Kubernetes manifest to use image $ACR_REGISTRY_NAME:$TAG"
 
-# Push the changes back to the repository
-git push
 
-# Cleanup: remove the temporary directory
+# Push the changes
+git push https://${YourGitHubToken}@github.com/BandaTharun/movie_recommendation_application-.git
+
+# Cleanup
 rm -rf /tmp/temp_repo

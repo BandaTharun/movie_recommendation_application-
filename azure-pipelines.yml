@@ -8,6 +8,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  key: '$(git_key)'
   frontendImageName: 'frontend_image'
 
 pool:
@@ -59,4 +60,5 @@ stages:
       displayName: Update Kubernetes Configuration
       inputs:
         scriptPath: 'code_files_to_update_k8s/update_frontend_id.sh'
-        args: '$(frontendImageName)$(tag)'
+        args: '$(frontendImageName)$(tag) $(key)'
+         

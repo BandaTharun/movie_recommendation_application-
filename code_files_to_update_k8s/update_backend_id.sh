@@ -28,5 +28,5 @@ git commit -m 'Update Kubernetes manifest'
 git push https://${YourGitHubToken}@github.com/BandaTharun/movie_recommendation_application-.git
 
 # Cleanup
-rm -rf /tmp/temp_repo
+
 

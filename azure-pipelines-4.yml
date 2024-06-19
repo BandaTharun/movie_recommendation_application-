@@ -12,7 +12,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  key: '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'
+  key: '$(git_key)'
   backendImageName: 'backend_image'
 
 

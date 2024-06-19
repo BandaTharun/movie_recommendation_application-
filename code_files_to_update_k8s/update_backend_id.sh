@@ -1,5 +1,4 @@
 
-
 #!/bin/bash
 
 set -x
@@ -24,9 +23,13 @@ sed -i "s|image:.*|image: $ACR_REGISTRY_NAME:$TAG|g" $DEPLOYMENT_FILE_PATH
 git add $DEPLOYMENT_FILE_PATH
 git commit -m 'Update Kubernetes manifest'
 
+# Set git user configuration
+git config user.name "Your Name"
+git config user.email "youremail@example.com"
+
 # Push the changes
 git push https://${YourGitHubToken}@github.com/BandaTharun/movie_recommendation_application-.git
 
 # Cleanup
-
+rm -rf /tmp/temp_repo
 

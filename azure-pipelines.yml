@@ -59,6 +59,5 @@ stages:
     - task: ShellScript@2
       displayName: Update Kubernetes Configuration
       inputs:
-        scriptPath: 'code_files_to_update_k8s/update_frontend_id.sh'
+        scriptPath: '$(Build.SourcesDirectory)/code_files_to_update_k8s/update_frontend_id.sh'
         args: '$(frontendImageName)$(tag) $(key)'
-         

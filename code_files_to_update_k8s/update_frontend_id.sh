@@ -42,13 +42,3 @@ git push https://${YourGitHubToken}@github.com/BandaTharun/movie_recommendation_
 
 # Cleanup
 rm -rf "$TEMP_REPO"
-
-
-
-
-
-
-
-
-
-

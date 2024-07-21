@@ -1,4 +1,5 @@
 {
+
   
   "name": "ecommerce",
   "proxy": "http://backend:5015/",

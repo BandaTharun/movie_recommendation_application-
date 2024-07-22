@@ -1,6 +1,4 @@
-{
-
-  
+{ 
   "name": "ecommerce",
   "proxy": "http://backend:5015/",
   "version": "0.1.0",

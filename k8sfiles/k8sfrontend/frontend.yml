@@ -13,7 +13,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: frontend
+      - name: backend
         image: tharun9705/movie_recommendation_applications_repository:frontend_image49
         ports:
         - containerPort: 3000
@@ -29,4 +29,4 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-  type:  NodePort
+  type: NodePort

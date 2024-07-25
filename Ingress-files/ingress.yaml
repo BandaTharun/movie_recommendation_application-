@@ -1,8 +1,7 @@
-# Ingress resource for the application
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: movie-recommendation
+  name: movie-recommendation-ingress  # Use a valid name
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
@@ -17,4 +16,4 @@ spec:
           service:
             name: frontend
             port:
-              number: 31798
+              number: 3000

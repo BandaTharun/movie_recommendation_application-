@@ -21,6 +21,8 @@ cd /tmp/temp_repo
 # Update the Kubernetes manifest
 sed -i "s/tag1: .*/tag1: $TAG|g" $DEPLOYMENT_FILE_PATH
 
+
+
 #'s/tag: .*/tag: "${{github.run_id}}"/'
 
 # Commit the changes

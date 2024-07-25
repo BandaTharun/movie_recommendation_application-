@@ -10,7 +10,7 @@ YourGitHubToken=$2
 
 #DEPLOYMENT_FILE_PATH="k8sfiles/k8sbackend/backend.yml"
 
-DEPLOYMENT_FILE_PATH="helm-backtend-application-chat copy/values.yaml"
+DEPLOYMENT_FILE_PATH="helm-backtend-application-chat/values.yaml"
 
 # Clone the repository using the PAT
 git clone https://${YourGitHubToken}@github.com/BandaTharun/movie_recommendation_application-.git /tmp/temp_repo

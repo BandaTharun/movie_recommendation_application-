@@ -1,15 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: movie-recommendation-ingress  # Use a valid name
+  name: movie-recommendation-ingress
+  namespace: default
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx
   rules:
   - host: movie-recommendation.local
     http:
-      paths: 
+      paths:
       - path: /
         pathType: Prefix
         backend:
@@ -17,3 +17,4 @@ spec:
             name: frontend
             port:
               number: 3000
+

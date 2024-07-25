@@ -6,7 +6,7 @@
 
 image:
   # Overrides the image tag whose default is the chart appVersion.
-  tag1: "backend_image64"
+  tag1: backend_image70
 
 
 

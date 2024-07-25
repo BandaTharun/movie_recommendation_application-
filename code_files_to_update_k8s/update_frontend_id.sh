@@ -17,7 +17,7 @@ git clone https://${YourGitHubToken}@github.com/BandaTharun/movie_recommendation
 cd /tmp/temp_repo
 
 # Update the Kubernetes manifest
-sed -i "s|image:.*|image: $ACR_REGISTRY_NAME:$TAG|g" $DEPLOYMENT_FILE_PATH
+sed -i "s/tag1:.*/tag1: $TAG/g" "$DEPLOYMENT_FILE_PATH"
 
 # Commit the changes
 git add $DEPLOYMENT_FILE_PATH

@@ -13,4 +13,7 @@ This project highlights my expertise in implementing advanced CI/CD practices us
 
 This setup not only automates the entire build and deployment pipeline but also ensures a high level of reliability and scalability, showcasing my ability to deliver efficient and scalable DevOps solutions.
 
+<img width="790" alt="Screenshot 2025-02-11 at 12 24 09 PM" src="https://github.com/user-attachments/assets/66757ad5-bac4-47a6-a9c8-c4edc50e3dfe" />
+
+
  ![Alt text](https://github.com/BandaTharun/movie_recommendation_application-/blob/main/Untitled%20Diagram.drawio%20(13)%20(1).png)

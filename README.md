@@ -15,5 +15,13 @@ This setup not only automates the entire build and deployment pipeline but also 
 
 <img width="790" alt="Screenshot 2025-02-11 at 12 24 09 PM" src="https://github.com/user-attachments/assets/66757ad5-bac4-47a6-a9c8-c4edc50e3dfe" />
 
+<img width="947" alt="Screenshot 2025-02-11 at 12 33 15 PM" src="https://github.com/user-attachments/assets/742c1e44-54db-45b8-95f0-330cb481fce1" />
+
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/e5ee7d49-4752-42f7-aebc-f9f3de3e2a46" />
+
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/117934de-4e6c-430c-9c7a-6b88bfcd7438" />
+
+
+
 
  ![Alt text](https://github.com/BandaTharun/movie_recommendation_application-/blob/main/Untitled%20Diagram.drawio%20(13)%20(1).png)

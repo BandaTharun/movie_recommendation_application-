@@ -1,4 +1,11 @@
 
+
+Please refer to the following link for the complete project documentation:  
+
+[Project Documentation](https://github.com/BandaTharun/movie_recommendation_application-/blob/main/Full%20documantation%20of%20the%20project%20fallowing%20SOFTWARE%20ENGINEERING%20life%20cycle%20.pdf)  
+
+This document provides a detailed overview of the project development process, following the Software Engineering lifecycle.   
+ 
 Movie recommendation systemMovie recommendation system
 
 🚀 Mid level DevOps project: a **Movie Recommendation System** with a robust CI/CD pipeline! 🎬

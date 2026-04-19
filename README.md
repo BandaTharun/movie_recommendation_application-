@@ -25,7 +25,7 @@ This setup not only automates the entire build and deployment pipeline but also 
 
 <img width="790" alt="image" src="https://github.com/user-attachments/assets/e5ee7d49-4752-42f7-aebc-f9f3de3e2a46" />
 
-<img width="790" height="200" alt="image" src="https://github.com/user-attachments/assets/117934de-4e6c-430c-9c7a-6b88bfcd7438" />
+<img width="790" height="700" alt="image" src="https://github.com/user-attachments/assets/117934de-4e6c-430c-9c7a-6b88bfcd7438" />
 
 
  ![Alt text](https://github.com/BandaTharun/movie_recommendation_application-/blob/main/Untitled%20Diagram.drawio%20(13)%20(1).png)
